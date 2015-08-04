@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>找刚网</title>
+</head>
+<link rel="stylesheet" href="../css/page.css" >
+<body>
+<div class="topbar">
+    <div class="w1000 clearfix" style="z-index: 20;">
+        <div class="toplink">
+            <span id="topbar_greet" style="margin-right: 10px">喵，欢迎来找钢</span>
+            <a href="javascript:void(0)" id="topbar_quit" style="display: none;">[退出]</a>
+            <a id="topbar_login_btn" class="btn-login" href="javascript:void(0);">请登录</a>
+            <a href="https://member.zhaogang.com/member/register.aspx" id="topbar_register">[免费注册]</a>
+        </div>
+        <div class="topmenu clearfix">
+            <ul>
+                <li>
+                    <div class="">
+                        <a href="https://member.zhaogang.com/Member/Vip.aspx" class="my_top">我的找钢网</a>
+                        <div class="my_list" style="display: none;">
+                            <a href="javascript:void(0);">我的采购单</a>
+                            <a href="javascript:void(0);">我的资源单</a>
+                            <a href="javascript:void(0);">我的关注</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="line">|</li>
+                <li id="topmenulist">
+                    <div class="my">
+                        <a href="javascript:void(0);" class="my_top">我的订单<i class="icon_down"></i></a>
+                        <div class="my_list" style="display: none;">
+                            <a href="https://member.zhaogang.com/Member/MyOrder.aspx">商城订单<span id="MyCount"></span></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="line">|</li>
+                <li>
+                    <div class="">
+                        <a href="http://vip.zhaogang.com" class="my_top">积分商城</a>
+                    </div>
+                </li>
+                <li style="display: none">
+                    <div class="find">
+                        <a href="http://my.zhaogang.com/order/buy/all/" class="find_top">委托找货<span class="orange" id="topbar_myordercount">0</span>条<i class="icon_down"></i></a>
+                        <div class="find_list" style="display: none;">
+                            <div class="find_yes">
+                                <h3>进行中的委托采购：</h3>
+                                <a href="javascript:void(0);"><span>正在找货</span>Q235B 16 1600*2500</a>
+                                <a href="javascript:void(0);"><span>正在找货</span>Q235B 16 1600*2500</a>
+                                <div class="button">
+                                    <input type="button" value="查看我的采购单" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="line">|</li>
+                <li><a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=800016576&cref&ref=&f=1&ty=1&ap=&as=&v=" id="Topbar_qqServerCustomer" target="_blank"><i class="icon_service"></i>在线客服</a></li>
+                <li class="line">|</li>
+                <li>
+                    <span>交易时间：工作日8:30-17:00</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="dialog popup-login">
+    <div class="close">
+        <a href="javascript:void(0)"></a>
+    </div>
+    <div class="dialog_box"></div>
+</div>
+
+<div class="mall_head">
+    <div class="w1000">
+        <div id="mallNavCart" class="right clearfix">
+            <a href="http://vip.zhaogang.com" target="_blank" class="scoreicon">
+                <i class="icon_score"></i>
+                <i class="icon_hot"></i>
+            </a>
+            <div id="mallNavCartEmptyIcon" class="carticon">
+                <i class="icon_cart icon_cart_empty"></i>
+            </div>
+            <div id="mallNavCartHasGoods" class="carticon active" style="display:none;">
+                <div class="cartnum" style="display:none;"></div>
+                <div class="cartinfo" style="display:none;">
+                    <div class="list">
+                        <ul>
+                        </ul>
+                        <h4>
+                            <a href="http://www.zhaogang.com/order/cart.aspx">查看全部&gt;</a>
+                        </h4>
+                    </div>
+                    <div class="count"></div>
+                    <div class="button">
+                        <input onclick="location.href = 'http://www.zhaogang.com/order/cart.aspx'" type="button" value="去结算" />
+                    </div>
+                </div>
+                <i class="icon_cart"></i>
+            </div>
+            <div class="search clearfix">
+                <div class="text">
+                    <input id="txtMallSearch" type="text" class="text" placeholder="请输入产品规格/材质/品名/钢厂" value="" />
+                </div>
+                <div class="button">
+                    <input type="button" class="button" value="搜索" />
+                </div>
+            </div>
+        </div>
+
+        <h1 class="logo"><a href="http://www.zhaogang.com"></a></h1>
+        <div class="city" style="display:none">
+            <h4>上海站[<a href="#">切换</a>]</h4>
+            <ul class="list clearfix" style="display:none;"><li><a href="javascript:void(0)" data-id="61" data-type="1"  data-url="http://www.zhaogang.com">上海</a></li></ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="mall_nav">
+    <div class="w1000">
+        <ul >
+            <li><a id="mallNavPage_index" href="http://www.zhaogang.com">首页</a></li>
+            <li title="钢铁现货在线交易中心">
+                <a id="mallNavPage_mall" href="http://www.zhaogang.com/Mall.html" target="_blank"><i class="icon_hot"></i>商城</a>
+            </li>
+            <li title="最新钢材资源单下载">
+                <a id="mallNavPage_ziyuan" href="http://zyd.zhaogang.com/ziyuan.html" target="_blank">资源单</a>
+            </li>
+            <li title="现货供求信息在线查找">
+                <a id="mallNavPage_xianhuo" href="http://zyd.zhaogang.com/spot.html" target="_blank">现货搜索</a>
+            </li>
+            <li title="钢材求购信息在线发布">
+                <a href="http://zy.zhaogang.com/order/caigou/" target="_blank">求购报价</a>
+            </li>
+            <li title="最快最全的实时成交价">
+                <a id="mallNavPage_price" href="http://hangqing.zhaogang.com" target="_blank"><i class="icon_now"></i>行情</a>
+            </li>
+            <li title="免费为您找车">
+                <a href="http://56.zhaogang.com/" target="_blank">物流</a>
+            </li>
+            <li title="竞拍">
+                <a href="http://jp.zhaogang.com/" target="_blank"><i class="icon_new2"></i>竞拍</a>
+            </li>
+            <li title="胖猫白条">
+                <a id="mallNavPage_baitiao" href="http://baitiao.zhaogang.com" target="_blank">胖猫白条</a>
+            </li>
+        </ul>
+    </div>
+</div><
+
+<div id="MallHead_isShowGCDMC">
+    <div id="DivMallHead">
+
+        <input name="TopTip$MallMenuTab2CategoryIDs" type="hidden" id="TopTip_MallMenuTab2CategoryIDs" class="ID_MallMenuTab2CategoryIDs" value="45">
+        <input name="TopTip$MallMenuTab3CategoryIDs" type="hidden" id="TopTip_MallMenuTab3CategoryIDs" class="ID_MallMenuTab3CategoryIDs" value="61,66,69">
+        <input name="TopTip$MallMenuTab4CategoryIDs" type="hidden" id="TopTip_MallMenuTab4CategoryIDs" class="ID_MallMenuTab4CategoryIDs" value="77,99,82,95,120,130,142,100000100">
+        <input name="TopTip$MallMenuTab5CategoryIDs" type="hidden" id="TopTip_MallMenuTab5CategoryIDs" class="ID_MallMenuTab5CategoryIDs" value="1,14,34,40">
+
+        <div class="w1000" style="z-index: 9;">
+            <div class="menu">
+                <h2><a href="javascript:void(0);">钢材大卖场<i class="icon_arrow"></i></a></h2>
+                <ul class="menu_ul">
+                    <li class="item">
+                        <i class="icon_line"></i>
+                        <div id="menuTab1" class="info one" style="display: none;">
+                            <ul id="tab1SubCategory" class="list_norm clearfix">
+                                <li><a data-id="63" title="三级螺纹钢">三级螺纹钢</a></li><li><a data-id="64" title="三级抗震螺纹钢">三级抗震...</a></li><li><a data-id="67" title="三级盘螺">三级盘螺</a></li><li><a data-id="68" title="三级抗震盘螺">三级抗震...</a></li><li><a data-id="78" title="四切普板">四切普板</a></li><li><a data-id="79" title="四切低合金板">四切低合...</a></li></ul>
+                            <ul id="tab1Specification" class="list_norm clearfix">
+                                <li><a data-id="100022285" title="20*2000*L">20*2000*L</a></li><li><a data-id="100022259" title="16*2000*L">16*2000*L</a></li><li><a data-id="100024791" title="25*2000*L">25*2000*L</a></li><li><a data-id="100024752" title="16*2200*L">16*2200*L</a></li><li><a data-id="100023811" title="14*2000*L">14*2000*L</a></li><li><a data-id="100024069" title="18*2000*L">18*2000*L</a></li></ul>
+                            <ul id="tab1Material" class="list_norm clearfix">
+                                <li><a data-id="17" title="HRB400">HRB400</a></li><li><a data-id="33" title="HRB400E">HRB400E</a></li><li><a data-id="6" title="Q235B">Q235B</a></li><li><a data-id="108" title="Q345B">Q345B</a></li></ul>
+                            <h6>钢厂直达<span><a href="javascript:void(0)" class="dot active" data-no="0"></a><a href="javascript:void(0)" class="dot" data-no="1"></a></span></h6><ul class="list_company clearfix data-no-0"><li><a data-id="75" title="金虹">金虹</a></li><li><a data-id="311" title="华伟">华伟</a></li><li><a data-id="92" title="宝航">宝航</a></li><li><a data-id="47" title="西王">西王</a></li><li><a data-id="443" title="飞达">飞达</a></li><li><a data-id="156" title="长达">长达</a></li></ul><ul class="list_company clearfix data-no-1" style="display: none;"><li><a data-id="128" title="东华">东华</a></li><li><a data-id="89" title="宁峰">宁峰</a></li></ul></div>
+                        <i class="icon_view"></i>
+                        <h4 class="my" data-mnemonic="">
+                            <i class="icon_arrow"></i>
+                            我的关注
+                        </h4>
+                        <p class="top-factory">
+                            <a data-id="75" title="金虹">金虹</a><a data-id="311" title="华伟">华伟</a><a data-id="92" title="宝航">宝航</a></p>
+                    </li>
+                    <li class="item">
+                        <i class="icon_line"></i>
+                        <div id="menuTab2" class="info two" style="display: none;">
+                            <ul id="tab2SubCategory" class="list_norm clearfix">
+                                <li><a data-id="47" title="普卷">普卷</a></li><li><a data-id="48" title="低合金卷">低合金卷</a></li><li><a data-id="52" title="C料">C料</a></li><li><a data-id="54" title="花纹卷">花纹卷</a></li><li><a data-id="57" title="汽车大梁卷">汽车大梁卷</a></li><li><a data-id="55" title="高强度卷板">高强度卷板</a></li></ul>
+                            <ul id="tab2Specification" class="list_norm clearfix">
+                                <li><a data-id="100096680" title="1.3*1250*C">1.3*1250*C</a></li><li><a data-id="100099702" title="10*2000*10000">10*2000*10000</a></li><li><a data-id="100096799" title="3.2*1500*C">3.2*1500*C</a></li><li><a data-id="100096392" title="3.5*1250*C">3.5*1250*C</a></li><li><a data-id="100096404" title="4.0*1250*C">4.0*1250*C</a></li><li><a data-id="100024494" title="1.5*1250*C">1.5*1250*C</a></li><li><a data-id="100022259" title="16*2000*L">16*2000*L</a></li><li><a data-id="100021553" title="1.4*1250*C">1.4*1250*C</a></li><li><a data-id="100023924" title="5.75*1500*C">5.75*1500*C</a></li></ul>
+                            <ul id="tab2Material" class="list_norm clearfix">
+                                <li><a data-id="6" title="Q235B">Q235B</a></li><li><a data-id="108" title="Q345B">Q345B</a></li><li><a data-id="96" title="SS400">SS400</a></li><li><a data-id="100000202" title="SPHC-P">SPHC-P</a></li><li><a data-id="344" title="HQ235B">HQ235B</a></li><li><a data-id="100000169" title="Q345D">Q345D</a></li><li><a data-id="100000136" title="Q345R">Q345R</a></li></ul>
+                            <h6>钢厂直达<span><a href="javascript:void(0)" class="dot active" data-no="0"></a><a href="javascript:void(0)" class="dot" data-no="1"></a></span></h6><ul class="list_company clearfix data-no-0"><li><a data-id="27" title="日照">日照</a></li><li><a data-id="45" title="武钢">武钢</a></li><li><a data-id="223" title="本钢">本钢</a></li><li><a data-id="21" title="通钢">通钢</a></li><li><a data-id="90" title="沙钢">沙钢</a></li><li><a data-id="311" title="华伟">华伟</a></li></ul><ul class="list_company clearfix data-no-1" style="display: none;"><li><a data-id="100000239" title="天钢">天钢</a></li></ul></div>
+                        <i class="icon_sun"></i>
+                        <h4 class="dm" data-mnemonic="rj">
+                            <i class="icon_arrow"></i>
+                            热卷
+                        </h4>
+                        <p>昨日成交<b id="mallMenuTab2ParentDealWeight">41576.975</b>吨</p>
+                    </li>
+                    <li class="item">
+                        <i class="icon_line"></i>
+                        <div id="menuTab3" class="info three" style="display: none;">
+                            <ul id="tab3SubCategory" class="list_norm clearfix">
+                                <li><a data-id="64" title="三级抗震螺纹钢">三级抗震...</a></li><li><a data-id="67" title="三级盘螺">三级盘螺</a></li><li><a data-id="68" title="三级抗震盘螺">三级抗震...</a></li><li><a data-id="63" title="三级螺纹钢">三级螺纹钢</a></li><li><a data-id="70" title="高线">高线</a></li></ul>
+                            <ul id="tab3Specification" class="list_norm clearfix">
+                                <li><a data-id="100100540" title="10*9A">10*9A</a></li><li><a data-id="100100541" title="12*9A">12*9A</a></li><li><a data-id="100100544" title="14*9A">14*9A</a></li><li><a data-id="100022385" title="8">8</a></li><li><a data-id="100024026" title="10">10</a></li><li><a data-id="100022038" title="12*9">12*9</a></li><li><a data-id="100023399" title="28*9">28*9</a></li><li><a data-id="100023201" title="25*9">25*9</a></li><li><a data-id="100022322" title="32*9">32*9</a></li></ul>
+                            <ul id="tab3Material" class="list_norm clearfix">
+                                <li><a data-id="33" title="HRB400E">HRB400E</a></li><li><a data-id="17" title="HRB400">HRB400</a></li><li><a data-id="4" title="HPB300">HPB300</a></li><li><a data-id="2" title="Q195">Q195</a></li><li><a data-id="100000071" title="Q235">Q235</a></li></ul>
+                            <h6>钢厂直达<span><a href="javascript:void(0)" class="dot active" data-no="0"></a><a href="javascript:void(0)" class="dot" data-no="1"></a><a href="javascript:void(0)" class="dot" data-no="2"></a><a href="javascript:void(0)" class="dot" data-no="3"></a><a href="javascript:void(0)" class="dot" data-no="4"></a></span></h6><ul class="list_company clearfix data-no-0"><li><a data-id="47" title="西王">西王</a></li><li><a data-id="27" title="日照">日照</a></li><li><a data-id="75" title="金虹">金虹</a></li><li><a data-id="100000438" title="威钢">威钢</a></li><li><a data-id="100000560" title="鑫典">鑫典</a></li><li><a data-id="92" title="宝航">宝航</a></li></ul><ul class="list_company clearfix data-no-1" style="display: none;"><li><a data-id="60" title="雨花">雨花</a></li><li><a data-id="36" title="申特">申特</a></li><li><a data-id="100000194" title="凌钢">凌钢</a></li><li><a data-id="100000232" title="嘉晨">嘉晨</a></li><li><a data-id="45" title="武钢">武钢</a></li><li><a data-id="23" title="中天">中天</a></li></ul><ul class="list_company clearfix data-no-2" style="display: none;"><li><a data-id="100000206" title="新抚顺">新抚顺</a></li><li><a data-id="100000172" title="远联">远联</a></li><li><a data-id="21" title="通钢">通钢</a></li><li><a data-id="100000252" title="桂鑫">桂鑫</a></li><li><a data-id="79" title="西城">西城</a></li><li><a data-id="90" title="沙钢">沙钢</a></li></ul><ul class="list_company clearfix data-no-3" style="display: none;"><li><a data-id="67" title="萍钢">萍钢</a></li><li><a data-id="100000343" title="中阳">中阳</a></li><li><a data-id="156" title="长达">长达</a></li><li><a data-id="100000243" title="镔鑫">镔鑫</a></li><li><a data-id="128" title="东华">东华</a></li><li><a data-id="100000219" title="敬业">敬业</a></li></ul><ul class="list_company clearfix data-no-4" style="display: none;"><li><a data-id="100000594" title="澳森">澳森</a></li><li><a data-id="109" title="三德">三德</a></li><li><a data-id="100002779" title="四平现代">四平现代</a></li><li><a data-id="100000230" title="黄海">黄海</a></li><li><a data-id="100000239" title="天钢">天钢</a></li><li><a data-id="100000436" title="溧阳光明">溧阳光明</a></li></ul></div>
+                        <i class="icon_carouse"></i>
+                        <h4 class="dm" data-mnemonic="jc">
+                            <i class="icon_arrow"></i>
+                            建材
+                        </h4>
+                        <p>昨日成交<b id="mallMenuTab3ParentDealWeight">58069.666</b>吨</p>
+                    </li>
+                    <li class="item">
+                        <i class="icon_line"></i>
+                        <div id="menuTab4" class="info four" style="display: none;">
+                            <ul id="tab4SubCategory" class="list_norm clearfix">
+                                <li><a data-id="78" title="四切普板">四切普板</a></li><li><a data-id="79" title="四切低合金板">四切低合...</a></li><li><a data-id="100000061" title="四毛普板">四毛普板</a></li><li><a data-id="100000080" title="两切普板">两切普板</a></li><li><a data-id="84" title="船板">船板</a></li><li><a data-id="100000062" title="两切低合金板">两切低合...</a></li><li><a data-id="100000063" title="四毛低合金板">四毛低合...</a></li><li><a data-id="100000322" title="两切碳板">两切碳板</a></li><li><a data-id="100000320" title="四毛碳板">四毛碳板</a></li></ul>
+                            <ul id="tab4Specification" class="list_norm clearfix">
+                                <li><a data-id="100096347" title="10*1750*L">10*1750*L</a></li><li><a data-id="100099702" title="10*2000*10000">10*2000*10000</a></li><li><a data-id="100098680" title="10*2000*8000">10*2000*8000</a></li><li><a data-id="100097900" title="100*2200*L">100*2200*L</a></li><li><a data-id="100105471" title="11*1800*8000">11*1800*8000</a></li><li><a data-id="100098611" title="12*1750*L">12*1750*L</a></li><li><a data-id="100099635" title="12*1800*10000">12*1800*10000</a></li><li><a data-id="100097354" title="12*2000*8000">12*2000*8000</a></li><li><a data-id="100105472" title="13*1800*10000">13*1800*10000</a></li></ul>
+                            <ul id="tab4Material" class="list_norm clearfix">
+                                <li><a data-id="6" title="Q235B">Q235B</a></li><li><a data-id="108" title="Q345B">Q345B</a></li><li><a data-id="100000066" title="CCSB">CCSB</a></li><li><a data-id="100000447" title="CCSAH36">CCSAH36</a></li><li><a data-id="96" title="SS400">SS400</a></li><li><a data-id="100000356" title="S45C">S45C</a></li><li><a data-id="100000065" title="45#">45#</a></li><li><a data-id="100001619" title="AH60C">AH60C</a></li><li><a data-id="100000546" title="Q345A">Q345A</a></li></ul>
+                            <h6>钢厂直达<span><a href="javascript:void(0)" class="dot active" data-no="0"></a><a href="javascript:void(0)" class="dot" data-no="1"></a></span></h6><ul class="list_company clearfix data-no-0"><li><a data-id="27" title="日照">日照</a></li><li><a data-id="45" title="武钢">武钢</a></li><li><a data-id="223" title="本钢">本钢</a></li><li><a data-id="79" title="西城">西城</a></li><li><a data-id="90" title="沙钢">沙钢</a></li><li><a data-id="67" title="萍钢">萍钢</a></li></ul><ul class="list_company clearfix data-no-1" style="display: none;"><li><a data-id="156" title="长达">长达</a></li><li><a data-id="100000219" title="敬业">敬业</a></li><li><a data-id="311" title="华伟">华伟</a></li><li><a data-id="100000239" title="天钢">天钢</a></li></ul></div>
+                        <i class="icon_map"></i>
+                        <h4 class="dm" data-mnemonic="zhb">
+                            <i class="icon_arrow"></i>
+                            中厚板
+                        </h4>
+                        <p>昨日成交<b id="mallMenuTab4ParentDealWeight">14501.472</b>吨</p>
+                    </li>
+                    <li class="item">
+                        <i class="icon_line"></i>
+                        <div id="menuTab5" class="info five" style="display: none;">
+                            <ul id="tab5SubCategory" class="list_norm clearfix">
+                                <li><a data-id="5" title="冷轧盒板">冷轧盒板</a></li><li><a data-id="2" title="冷轧卷">冷轧卷</a></li><li><a data-id="192" title="无花镀锌卷">无花镀锌卷</a></li><li><a data-id="53" title="酸洗卷">酸洗卷</a></li><li><a data-id="3" title="冷轧板">冷轧板</a></li><li><a data-id="10" title="冷轧深冲卷">冷轧深冲卷</a></li><li><a data-id="191" title="有花镀锌卷">有花镀锌卷</a></li></ul>
+                            <ul id="tab5Specification" class="list_norm clearfix">
+                                <li><a data-id="100096831" title="0.8*1219*C">0.8*1219*C</a></li><li><a data-id="100097711" title="0.9*1219*C">0.9*1219*C</a></li><li><a data-id="100096560" title="1.2*1250*2500">1.2*1250*2500</a></li><li><a data-id="100096680" title="1.3*1250*C">1.3*1250*C</a></li><li><a data-id="100096527" title="1.4*1250*2500">1.4*1250*2500</a></li><li><a data-id="100096599" title="1.9*1250*2500">1.9*1250*2500</a></li><li><a data-id="100096566" title="3.2*1250*C">3.2*1250*C</a></li><li><a data-id="100096799" title="3.2*1500*C">3.2*1500*C</a></li><li><a data-id="100096392" title="3.5*1250*C">3.5*1250*C</a></li></ul>
+                            <ul id="tab5Material" class="list_norm clearfix">
+                                <li><a data-id="6" title="Q235B">Q235B</a></li><li><a data-id="100000053" title="ST12">ST12</a></li><li><a data-id="100000681" title="SGCC-Z80">SGCC-Z80</a></li><li><a data-id="100000513" title="DX51D+Z60">DX51D+Z60</a></li><li><a data-id="100000248" title="DX51D+Z80">DX51D+Z80</a></li><li><a data-id="75" title="DC03">DC03</a></li><li><a data-id="74" title="SPCCT">SPCCT</a></li><li><a data-id="46" title="SPCC">SPCC</a></li><li><a data-id="100000074" title="DC04">DC04</a></li></ul>
+                            <h6>钢厂直达<span><a href="javascript:void(0)" class="dot active" data-no="0"></a></span></h6><ul class="list_company clearfix data-no-0"><li><a data-id="45" title="武钢">武钢</a></li><li><a data-id="223" title="本钢">本钢</a></li><li><a data-id="79" title="西城">西城</a></li><li><a data-id="90" title="沙钢">沙钢</a></li><li><a data-id="100000265" title="鞍钢天铁">鞍钢天铁</a></li><li><a data-id="100000246" title="黄石山力">黄石山力</a></li></ul></div>
+                        <i class="icon_box"></i>
+                        <h4 class="dm" data-mnemonic="ld">
+                            <i class="icon_arrow"></i>
+                            冷轧涂镀
+                        </h4>
+                        <p>昨日成交<b id="mallMenuTab5ParentDealWeight">12887.732</b>吨</p>
+                    </li>
+                    <li class="item last">
+                        <i class="icon_line"></i>
+                        <div id="menuTab6" class="info six" style="display: none;">
+                        </div>
+                        <i class="icon_copy"></i>
+                        <h4 data-mnemonic="">
+                            <i class="icon_arrow"></i>
+                            钢厂专区
+                        </h4>
+                        <p class="top-factory">
+                            <a data-id="100000230" title="黄海">黄海</a><a data-id="47" title="西王">西王</a><a data-id="311" title="华伟">华伟</a><a data-id="100000560" title="鑫典">鑫典</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<input name="serverDateTime" type="hidden" id="serverDateTime" value="08/04/2015 10:00:38">
+
+<div class="index_banner">
+    <div id="topBanner" class="slide" style="position: relative; ">
+        <div class="bg" style="background-image: url(http://img.zhaogang.com/Pictures/banner/bafc2cae-1ebc-4d4c-a1ec-0f97feb4ea1b.jpg);
+         position: absolute; top: 0px; left: 0px; z-index: 4; opacity: 0; display: none; " title="胖猫白条" data-link="http://baitiao.zhaogang.com">
+            <a href="http://baitiao.zhaogang.com" target="_blank"></a>
+        </div>
+
+        <div class="bg" style="background-image: url(http://img.zhaogang.com/Pictures/banner/ad3cb7ae-64bc-4fb2-bbb2-5cebd27e2247.jpg);
+         top: 0px; left: 0px; z-index: 3; position: absolute; display: block;opacity: 0.2702100696892561; " title="找钢网，马钢型材到货啦" data-link="http://zyd.zhaogang.com/v/23237">
+            <a href="http://zyd.zhaogang.com/v/23237" target="_blank"></a>
+        </div>
+
+        <div class="bg" style="background-image: url(http://img.zhaogang.com/Pictures/banner/906e5ed6-b9b8-4429-a26c-fb06f93d7fa4.jpg);
+         top: 0px; left: 0px; z-index: 2; position: absolute; display: block;opacity: 0.7297899303107439; " title="相约胖猫物流APP，在线委托得20积分/吨" data-link="http://56.zhaogang.com/appmeet.aspx">
+            <a href="http://56.zhaogang.com/appmeet.aspx" target="_blank"></a>
+        </div>
+
+        <div class="bg" style="background-image: url(http://img.zhaogang.com/Pictures/banner/d92445db-f128-4718-b7b9-ee28878d8815.jpg);
+             top: 0px; left: 0px; z-index: 1; position: absolute; display: none; opacity: 0;" title="快来积分大转盘！" data-link="http://vip.zhaogang.com/">
+            <a href="http://vip.zhaogang.com/" target="_blank"></a>
+        </div>
+    </div>
+
+    <div id="topBannerPager" class="w1000">
+        <div class="slide_btn"></div>
+    </div>
+
+    <div class="w1000">
+        <div class="board">
+            <h3>
+                <div class="date">
+                    08/04<br>周二
+                </div>
+                <span>今日钢厂指导价</span>
+            </h3>
+            <div id="basicPriceList" class="list">
+                <ul class="data-no-0">
+                    <li style="height: 164px;">
+                        <div class="part" style="display: none;">
+                            <span>日照</span>
+                            <span class="blue">2130</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 14:33</h5>
+                            <h2 title="日照">日照</h2>
+                            <h4 class="blue">2130</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>低合金卷5.75*1500*C</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part"><span>日照</span>
+                             <span class="orange">2010</span>
+                             <span class="orange">10</span>
+                            <span>&nbsp;<i class="icon_up"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow up"></i>
+                            <h5>更新日期:08月03日 14:33</h5>
+                            <h2 title="日照">日照</h2>
+                            <h4 class="orange">2010</h4>
+                            <p class="orange">10 0.50%</p>
+                            <span>普卷5.75*1500*C</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>华伟</span>
+                            <span class="blue">2100</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 11:34</h5>
+                            <h2 title="华伟">华伟</h2>
+                            <h4 class="blue">2100</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>四切普板20*2000*L</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>天钢</span>
+                            <span class="blue">2080</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 11:34</h5>
+                            <h2 title="天钢">天钢</h2>
+                            <h4 class="blue">2080</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>四切普板20*2000*L</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>唐钢</span>
+                            <span class="blue">2070</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 11:34</h5>
+                            <h2 title="唐钢">唐钢</h2>
+                            <h4 class="blue">2070</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>四切普板20*2000*L</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="data-no-1" style="display: none;">
+                    <li style="height: 164px;">
+                        <div class="part" style="display: none;">
+                            <span>萍钢</span>
+                            <span class="blue">2070</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 11:34</h5>
+                            <h2 title="萍钢">萍钢</h2>
+                            <h4 class="blue">2070</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>四切普板20*2000*L</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>马钢</span>
+                            <span class="blue">2150</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 11:34</h5>
+                            <h2 title="马钢">马钢</h2>
+                            <h4 class="blue">2150</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>四切普板20*2000*L</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>鞍钢天铁</span><span class="blue">2960</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:50</h5>
+                            <h2 title="鞍钢天铁">鞍钢天铁</h2>
+                            <h4 class="blue">2960</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>无花镀锌卷1.0*1250*C</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>酒钢</span><span class="blue">2910</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:50</h5>
+                            <h2 title="酒钢">酒钢</h2>
+                            <h4 class="blue">2910</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>无花镀锌卷1.0*1250*C</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>本钢</span>
+                            <span class="blue">2540</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;
+                                <i class="icon_falt"></i>
+                            </span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:50</h5>
+                            <h2 title="本钢">本钢</h2>
+                            <h4 class="blue">2540</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>冷轧盒板1.0*1250*C</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="data-no-2" style="display: none;">
+                    <li style="height: 164px;">
+                        <div class="part" style="display: none;">
+                            <span>鄂钢</span>
+                            <span class="blue">2580</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:50</h5>
+                            <h2 title="鄂钢">鄂钢</h2>
+                            <h4 class="blue">2580</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>冷轧卷1.0*1250*C</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>鞍钢</span>
+                            <span class="blue">2650</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:50</h5>
+                            <h2 title="鞍钢">鞍钢</h2>
+                            <h4 class="blue">2650</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>冷轧卷1.0*1250*C</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>申特</span>
+                            <span class="blue">2100</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:44</h5>
+                            <h2 title="申特">申特</h2>
+                            <h4 class="blue">2100</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>三级抗震螺纹22*9</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>新抚顺</span>
+                            <span class="blue">2070</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:44</h5>
+                            <h2 title="新抚顺">新抚顺</h2>
+                            <h4 class="blue">2070</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>三级抗震螺纹20*9</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>中天</span>
+                            <span class="blue">2080</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:44</h5>
+                            <h2 title="中天">中天</h2>
+                            <h4 class="blue">2080</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>三级螺纹22*9</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="data-no-3" style="display: none;">
+                    <li style="height: 164px;">
+                        <div class="part" style="display: none;">
+                            <span>西王</span>
+                            <span class="blue">2000</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:44</h5>
+                            <h2 title="西王">西王</h2>
+                            <h4 class="blue">2000</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>三级螺纹22*9</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>鑫典</span>
+                            <span class="blue">2230</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:44</h5>
+                            <h2 title="鑫典">鑫典</h2>
+                            <h4 class="blue">2230</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>三级盘螺8</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>西王</span>
+                            <span class="blue">2250</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:08月03日 09:44</h5>
+                            <h2 title="西王">西王</h2>
+                            <h4 class="blue">2250</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>三级盘螺8</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>新三洲</span>
+                            <span class="orange">2230</span>
+                            <span class="orange">10</span>
+                            <span>&nbsp;<i class="icon_up"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow up"></i>
+                            <h5>更新日期:08月03日 09:44</h5>
+                            <h2 title="新三洲">新三洲</h2>
+                            <h4 class="orange">2230</h4>
+                            <p class="orange">10 0.45%</p>
+                            <span>三级盘螺8</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="part">
+                            <span>凌钢</span>
+                            <span class="blue">2000</span>
+                            <span class="blue">0</span>
+                            <span>&nbsp;<i class="icon_falt"></i></span>
+                        </div>
+                        <div class="full" style="display: none;">
+                            <i class="icon_arrow falt"></i>
+                            <h5>更新日期:07月30日 09:44</h5>
+                            <h2 title="凌钢">凌钢</h2>
+                            <h4 class="blue">2000</h4>
+                            <p class="blue">&nbsp;</p>
+                            <span>三级抗震螺纹20*9</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="list_btn">
+                    <a href="javascript:void(0)" class="active" data-no="0"></a>
+                    <a href="javascript:void(0)" class="" data-no="1"></a>
+                    <a href="javascript:void(0)" class="" data-no="2"></a>
+                    <a href="javascript:void(0)" class="" data-no="3"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

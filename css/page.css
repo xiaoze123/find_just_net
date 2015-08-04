@@ -1,0 +1,471 @@
+body{
+    background: #fff;
+    font-size: 12px;
+    font-family: "microsoft yahei","微软雅黑";
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar {
+    width: 100%;
+    height: 28px;
+    border-bottom: 1px solid #e8e8e8;
+    background: #f6f6f6;
+    color: #666;
+}
+
+.w1000{
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.clearfix{
+    zoom: 1;
+}
+
+.topbar .toplink{
+    float: left;
+    display: inline;
+    width: 300px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.topbar .icon_service {
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    margin: -3px 3px 0 0;
+    line-height: 10px;
+    background: url(../img/zg_icon.png) no-repeat 0 -12px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.topbar .toplink a {
+    margin: 0 15px 0 0;
+    color: #666666;
+    text-decoration: none;
+}
+
+.topmenu ul li{
+    float: left;
+    display: inline;
+}
+
+.topbar .topmenu{
+    float: right;
+    display: inline;
+    height: 28px;
+    line-height: 28px;
+    /*margin-top: -10px;*/
+}
+
+.topbar .topmenu ul li {
+    margin: 0 15px 0 0;
+}
+
+.topbar .topmenu ul li a{
+    text-decoration: none;
+}
+
+.mall_head{
+    position: relative;
+    width: 100%;
+    height: 72px;
+    margin: 9px 0;
+    background: #ffffff;
+    z-index: 10;
+}
+
+.mall_head .right{
+    float: right;
+    width: 490px;
+    margin: 11px 0 0;
+}
+
+.mall_head .right .scoreicon{
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 36px;
+    margin: 0 0 0 7px;
+    border: 1px solid #cccccc;
+    background: #f1edec;
+    z-index: 9999;
+}
+
+.mall_head .right .scoreicon .icon_score {
+    display: block;
+    width: 20px;
+    height: 22px;
+    margin: 7px 0 0 15px;
+    background: url(../img/zg_icon.png) no-repeat -232px -265px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mall_head .right .carticon{
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 36px;
+    margin: 0 0 0 7px;
+    border: 1px solid #cccccc;
+    background: #f1edec;
+    z-index: 9999;
+}
+
+.mall_head .right .scoreicon .icon_hot {
+    position: absolute;
+    top: -8px;
+    left: 37px;
+    width: 22px;
+    height: 10px;
+    background: url(../img/hot.gif) no-repeat;
+}
+
+.mall_head .right .carticon .icon_cart {
+    display: block;
+    width: 50px;
+    height: 36px;
+    background: url("../img/mallNavCartEmpty.png") 50% 50% no-repeat;
+    cursor: pointer;
+}
+
+.mall_head .logo {
+    width: 500px;
+    height: 72px;
+    background: url(../img/malllogo.jpg) no-repeat 15px 0;
+}
+
+.mall_head .right .search{
+    float: right;
+    display: inline;
+    width: 340px;
+    height: 38px;
+}
+
+.mall_head .right .search .text{
+    float: left;
+    display: inline;
+    width: 258px;
+}
+
+.mall_head .right .search .text input{
+    width: 245px;
+    height: 20px;
+    padding: 5px 0 5px 5px ;
+    border: 4px  solid #f50;
+    line-height: 20px;
+    outline: none;
+}
+
+.mall_head .right .search .button{
+    float: left;
+    display: inline;
+    width: 82px;
+}
+
+.mall_head .right .search .button input{
+    width: 82px;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #f50;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.mall_nav{
+    height: 40px;
+    background: #005bac;
+}
+
+.mall_nav ul{
+    float: left;
+    display: inline;
+    width: 820px;
+    height: 40px;
+    margin: 0 0 0 180px;
+}
+
+.mall_nav ul li{
+    float: left;
+    display: inline;
+    height: 40px;
+    line-height: 40px;
+}
+
+.mall_nav ul li a{
+    position: relative;
+    float: left;
+    display: block;
+    padding: 0 19px;
+    color: #ffffff;
+    font-size: 16px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.mall_nav ul li a .icon_hot{
+    position: absolute;
+    top: -8px;
+    right: 0;
+    width: 29px;
+    height: 20px;
+    background: url(../img/zg_icon.png) no-repeat -230px -431px;
+    overflow: hidden;
+}
+
+.mall_nav ul li a .icon_now {
+    position: absolute;
+    top: -8px;
+    right: 0;
+    width: 29px;
+    height: 20px;
+    background: url(../img/zg_icon.png) no-repeat -230px -451px;
+    overflow: hidden;
+}
+
+.mall_nav ul li a .icon_new2 {
+    position: absolute;
+    top: -8px;
+    right: 0;
+    width: 29px;
+    height: 20px;
+    background: url(../img/zg_icon.png) no-repeat -187px -534px;
+    overflow: hidden;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, img {
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    z-index: 9;
+    margin-top: -55px;
+}
+
+menu h2 {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    float: left;
+    display: inline;
+    width: 180px;
+    height: 40px;
+}
+
+.menu h2 a {
+    display: block;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    background: #0075c2;
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+}
+
+.menu .icon_arrow {
+    position: absolute;
+    right: 12px;
+    top: 18px;
+    display: block;
+    width: 9px;
+    height: 6px;
+    background: url(../img/zg_icon.png) no-repeat -89px 0;
+    overflow: hidden;
+}
+
+.menu_ul{
+    display: block;
+    width: 180px;
+    height: 408px;
+    background: #fff;
+    box-shadow: 0 0 5px #999;
+}
+ol, ul, li {
+    list-style: none;
+}
+
+.menu .item{
+    position: relative;
+    width: 180px;
+    height: 67px;
+    border-bottom: 1px solid #cfcfcf;
+}
+.menu .item .icon_view {
+    position: absolute;
+    left: 8px;
+    top: 26px;
+    width: 18px;
+    height: 16px;
+    background: url(../img/zg_icon.png) no-repeat -183px -253px;
+    overflow: hidden;
+}
+
+.menu .item h4 {
+    height: 20px;
+    padding: 10px 12px 8px 36px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #3f3f3f;
+    font-weight: normal;
+}
+.menu .item h4 .icon_arrow {
+    float: right;
+    display: inline-block;
+    width: 5px;
+    height: 7px;
+    background: url(../img/zg_icon.png) no-repeat -200px -20px;
+}
+.menu .item p {
+    height: 16px;
+    padding: 0 0 0 36px;
+    line-height: 16px;
+    color: #666;
+}
+.menu .item p a {
+    margin: 0 8px 0 0;
+    color: #777;
+    cursor: pointer;
+}
+
+.menu .item .icon_line {
+    position: absolute;
+    left: 176px;
+    top: 0;
+    width: 5px;
+    height: 67px;
+    background: #fff;
+    overflow: hidden;
+    z-index: 9999;
+}
+.menu ul li .info.one {
+    top: 0;
+    left: 180px;
+}
+.menu ul li .info {
+    position: absolute;
+    /* top: 0; */
+    /*left: 180px;*/
+    width: 260px;
+    height: 408px;
+    border-left: 1px solid #cfcfcf;
+    box-shadow: 0 0 8px #ccc;
+    background: #fff;
+}
+.menu ul li .info .list_norm {
+    height: 72px;
+    padding: 12px 10px;
+}
+.clearfix {
+    zoom: 1;
+}
+.menu ul li .info .list_norm li {
+    float: left;
+    display: inline;
+    width: 80px;
+    height: 24px;
+    overflow: hidden;
+}
+.menu ul li .info .list_norm li a {
+    display: block;
+    width: 68px;
+    height: 22px;
+    padding: 0 5px;
+    border: 1px solid #fff;
+    line-height: 22px;
+    color: #777;
+    cursor: pointer;
+}
+menu ul li .info h6 {
+    height: 30px;
+    padding: 0 10px;
+    border-bottom: 1px solid #cfcfcf;
+    border-top: 1px solid #cfcfcf;
+    line-height: 30px;
+    font-size: 14px;
+    color: #3d3d3d;
+}
+.menu ul li .info h6 span {
+    display: inline-block;
+    float: right;
+    height: 30px;
+}
+.menu ul li .info h6 .dot.active {
+    background-position: -80px -124px;
+}
+.menu ul li .info h6 .dot {
+    float: left;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: 10px 0 0;
+    background: url(../img/zg_icon.png) no-repeat -67px -124px;
+    overflow: hidden;
+}
+
+.menu .item .icon_sun {
+    position: absolute;
+    left: 8px;
+    top: 24px;
+    width: 18px;
+    height: 18px;
+    background: url(../img/zg_icon.png) no-repeat -242px -168px;
+    overflow: hidden;
+}
+.menu .item p b {
+    margin: 0 2px;
+    color: #f50;
+}
+.menu .item .icon_carouse {
+    position: absolute;
+    left: 9px;
+    top: 26px;
+    width: 18px;
+    height: 14px;
+    background: url(../img/zg_icon.png) no-repeat -64px -222px;
+    overflow: hidden;
+}
+.menu .item .icon_map {
+    position: absolute;
+    left: 9px;
+    top: 25px;
+    width: 18px;
+    height: 17px;
+    background: url(../img/zg_icon.png) no-repeat -147px -239px;
+    overflow: hidden;
+}
+.menu .item .icon_box {
+    position: absolute;
+    left: 8px;
+    top: 24px;
+    width: 18px;
+    height: 18px;
+    background: url(../img/zg_icon.png) no-repeat -111px -239px;
+    overflow: hidden;
+}
+.menu .item .icon_copy {
+    position: absolute;
+    left: 8px;
+    top: 24px;
+    width: 18px;
+    height: 18px;
+    background: url(../img/zg_icon.png) no-repeat -183px -235px;
+    overflow: hidden;
+}
